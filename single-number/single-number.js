@@ -5,7 +5,6 @@
 var singleNumber = function(nums) {
     // console.log(nums)
    let obj = {}
-   // console.log(object)
    
    for(let num of nums){
        if(obj[num]){
