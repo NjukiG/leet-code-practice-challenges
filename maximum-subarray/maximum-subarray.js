@@ -4,6 +4,8 @@
  */
 var maxSubArray = function(nums) {
     
+    if(nums.length === 1) return nums[0]
+    
     let maxSummed = nums[0]
     let currentMax = nums[0]
     
