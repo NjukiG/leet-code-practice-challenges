@@ -10,8 +10,8 @@ var isAnagram = function (s, t) {
     //     return true
     // }else{return false}
 
-    return helper(s) === helper(t)
-
+    let result = helper(s) === helper(t)
+    return result
 };
 
 var helper = function (str) {
