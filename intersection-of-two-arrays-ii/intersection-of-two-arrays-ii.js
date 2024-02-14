@@ -4,26 +4,43 @@
  * @return {number[]}
  */
 var intersect = function(nums1, nums2) {
-    let newObj = {}
-    let result = []
+    // let newObj = {}
+    // let result = []
     // console.log(nums1, nums2)
+    // for(let num of nums1){
+//         // console.log(num)
+//         if(!newObj[num]){
+//             newObj[num] = 1
+//         }else{
+//             newObj[num]++ 
+//         }
+//     }
+//     // console.log(newObj)
+    
+//     for(let num of nums2){
+//         if(newObj[num] > 0){
+//             // console.log(newObj[num])
+//             result.push(num)
+//             newObj[num]--
+//         }
+//     }
+//     // console.log(result)
+//     return result
+    
+    let map1 = new Map()
+    
     for(let num of nums1){
-        // console.log(num)
-        if(!newObj[num]){
-            newObj[num] = 1
-        }else{
-            newObj[num]++ 
-        }
+        map1.set(num, (map1.get(num) || 0) + 1)
     }
-    // console.log(newObj)
+    
+    let result = []
     
     for(let num of nums2){
-        if(newObj[num] > 0){
-            // console.log(newObj[num])
+        if(map1.has(num) && map1.get(num) > 0){
             result.push(num)
-            newObj[num]--
+            map1.set(num, (map1.get(num) - 1))
         }
     }
-    // console.log(result)
+    
     return result
 };
